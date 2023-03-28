@@ -1,6 +1,8 @@
 
 import requests
+
 msg = 'Hello GIT xxx'
+
 url = 'https://notify-api.line.me/api/notify'
 token ='h8MKeseoDbKeXyo0sofRbhpw6EhBhHLfXRl9pWv7XGH'
 headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'Bearer '+token}
