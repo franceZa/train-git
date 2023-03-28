@@ -1,7 +1,7 @@
 
 import requests
 
-msg = 'Hello GIT xxx'
+msg = 'Hello GIT from y'
 
 url = 'https://notify-api.line.me/api/notify'
 token ='h8MKeseoDbKeXyo0sofRbhpw6EhBhHLfXRl9pWv7XGH'
