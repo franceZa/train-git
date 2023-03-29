@@ -21,12 +21,12 @@ jobs:
     - name: Build and push Docker images
     #push to container repo #
       run: |
-        export IMAGE_NAME=printsome
+        export IMAGE_NAME=train-git
         docker-compose build
-        docker tag ${IMAGE_NAME}_myappprintsome gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}_myappprintsome
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}_myappprintsome
+        docker tag ${IMAGE_NAME}-myapp gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}-myapp
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}-myapp
         
     - name: Deploy to Cloud Run
       run: |
-        export IMAGE_NAME=printsome
-        gcloud run deploy my-service-printsome --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}_myappprintsome --platform=managed --region=us-central1 --allow-unauthenticated
+        export IMAGE_NAME=train-git
+        gcloud run deploy my-service-printsome --image=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}-myapp --platform=managed --region=us-central1 --allow-unauthenticated
