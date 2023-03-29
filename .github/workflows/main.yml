@@ -21,7 +21,7 @@ jobs:
     - name: Build and push Docker images
     #push to container repo
       run: |
-        export IMAGE_NAME = printsome
+        export IMAGE_NAME=printsome
         docker-compose build
         docker tag ${IMAGE_NAME}_myappprintsome gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}_myappprintsome
         docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/${IMAGE_NAME}_myappprintsome
