@@ -30,4 +30,4 @@ jobs:
     - name: Deploy to Cloud Run
       run: |
         export IMAGE_NAME=train-git
-        gcloud run deploy my-service-printsome --image=asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME} --platform=managed --region=asia-southeast1 --allow-unauthenticated
+        gcloud run deploy my-service-printsome --image=asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME}@sha256:0849a4255ce789661492d775dd901b9fac02313dd362d5f64b5ac4a85c682634 --platform=managed --region=asia-southeast1 --allow-unauthenticated
