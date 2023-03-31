@@ -24,10 +24,10 @@ jobs:
         export IMAGE_NAME=train-git
         gcloud auth configure-docker
         docker-compose build
-        docker tag ${IMAGE_NAME} cloud-run-source-deploy/facebook-scraping-373515/${IMAGE_NAME}
-        docker push cloud-run-source-deploy/facebook-scraping-373515/${IMAGE_NAME}
+        docker tag ${IMAGE_NAME} asia-docker.pkg.dev/facebook-scraping-373515/asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME}
+        docker push asia-docker.pkg.dev/facebook-scraping-373515/asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME}
         
     - name: Deploy to Cloud Run
       run: |
         export IMAGE_NAME=train-git
-        gcloud run deploy my-service-printsome --image=cloud-run-source-deploy/facebook-scraping-373515/${IMAGE_NAME} --platform=managed --region=us-central1 --allow-unauthenticated
+        gcloud run deploy my-service-printsome --image=asia-docker.pkg.dev/facebook-scraping-373515/asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME} --platform=managed --region=asia-southeast1 --allow-unauthenticated
