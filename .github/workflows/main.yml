@@ -3,7 +3,8 @@ name: Deploy to Cloud Run
 on:
   push:
     branches:
-      - master
+      -featurex
+      #- master
 
 jobs:
   deploy:
@@ -22,6 +23,7 @@ jobs:
     #push to container repo #
       run: |
         export IMAGE_NAME=train-git
+        gcloud auth configure-docker
         docker-compose build
         docker tag ${IMAGE_NAME} asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME}
         docker push asia.gcr.io/facebook-scraping-373515/${IMAGE_NAME}
