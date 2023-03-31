@@ -3,8 +3,8 @@ name: Deploy to Cloud Run
 on:
   push:
     branches:
-      -featurex
-      #- master
+      
+      - master
 
 jobs:
   deploy:
